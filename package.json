@@ -17,6 +17,7 @@
   "devDependencies": {
     "browser-sync": "^2.4.0",
     "gulp": "^3.8.11",
+    "gulp-compile-handlebars": "^0.4.4",
     "gulp-concat": "^2.5.2",
     "gulp-express": "^0.3.5",
     "gulp-jshint": "^1.9.4",
