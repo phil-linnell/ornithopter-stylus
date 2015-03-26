@@ -1,14 +1,16 @@
 # Fremen
-Simple and small **node/express** app for no fuss UI developers and fast prototyping.
 
-- Node.js with Express.js
+A simple node.js app for no fuss UI developers and fast prototyping.
+
+- Express
 - Gulp
-  - stylus using nib,
-  - js that concatenates and minifies
-- Browser sync
+  - Stylus with nib,
+  - JS concat and uglify
+  - Browser sync
 - Handlebars and partials
 
-## Setup and start
 
     $ npm install
     $ gulp
+
+> “The Fremen were supreme in that quality the ancients called "spannungsbogen" -- which is the self-imposed delay between desire for a thing and the act of reaching out to grasp that thing.”

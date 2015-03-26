@@ -21,8 +21,8 @@ gulp.task('nodemon', function () {
 
 gulp.task('browser-sync', ['nodemon'], function() {
     browserSync.init( {
-        proxy: "localhost:3000",
-        port: "5000",
+        proxy: "localhost:10190",
+        port: "10191", // Hey that's the year Dune is set!
         open: false
     });
 });
@@ -53,12 +53,17 @@ gulp.task('templates', function() {
     .pipe(reload({stream:true}));
 });
 
+
+
+// Initial build
+gulp.task('build', ['css', 'scripts', 'templates']);
+
 // Watch
-gulp.task('watch', function () {
+gulp.task('watch', function() {
 	gulp.watch('src/stylesheets/**/*.styl', ['css']);
   gulp.watch('src/js/**/*.js', ['scripts']);
   gulp.watch('./views/**/*.hbs', ['templates']);
 });
 
 
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', ['build', 'browser-sync', 'watch']);
