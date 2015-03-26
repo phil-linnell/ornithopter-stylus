@@ -22,17 +22,17 @@ gulp.task('lint', function() {
 gulp.task('css', function() {
     return gulp.src('src/stylesheets/style.styl')
         .pipe(stylus({ use: nib() }))
-        .pipe(gulp.dest('public/stylesheets'));
+        .pipe(gulp.dest('build/stylesheets'));
 });
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
     return gulp.src('src/js/*.js')
         .pipe(concat('all.js'))
-        .pipe(gulp.dest('public/js'))
+        .pipe(gulp.dest('build/js'))
         .pipe(rename('all.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('public/js'));
+        .pipe(gulp.dest('build/js'));
 });
 
 // Start the server
@@ -49,7 +49,7 @@ gulp.task('server', function() {
 
   gulp.watch('src/stylesheets/*.styl', ['css']);
 
-  gulp.watch(['./public/stylesheets/**/*.css'], function(event){
+  gulp.watch(['./build/stylesheets/**/*.css'], function(event){
       console.log('css changed - do livereload');
       livereload.reload();
   });
