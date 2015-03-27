@@ -1,12 +1,13 @@
 # Fremen
 
-A static node.js app for no fuss UI developers and fast prototyping.
+A static node app for no fuss UI development or fast prototyping.
 
 - Gulp
-  - Stylus with nib,
-  - JS concat and uglify
-  - Browser sync
-  - Handlebars and partials
+- Stylus with nib,
+- JS concat and uglify
+- Handlebars and partials
+- Browser sync
+
 
 ```
 $ npm install

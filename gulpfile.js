@@ -45,24 +45,24 @@ gulp.task('scripts', function() {
 });
 
 
-var HBtemplateData = {
-  workingTitle: 'Fremen',
-  title: 'Fremen'
-};
-var HBoptions = {
-  ignorePartials: true,
-  batch: ['./src/views'],
-  helpers: {
-    capitals: function(str){
-      return str.toUpperCase();
-    }
-  }
-};
+
 
 // Templates
 gulp.task('templates', function() {
+	var templateData = {
+	  title: 'Fremen'
+	};
+	var options = {
+	  ignorePartials: true,
+	  batch: ['./src/views'],
+	  helpers: {
+	    capitals: function(str){
+	      return str.toUpperCase();
+	    }
+	  }
+	};
 	return gulp.src('src/views/*.html')
-		.pipe(handlebars(HBtemplateData, HBoptions))
+		.pipe(handlebars(templateData, options))
 		.pipe(gulp.dest('build/'))
 		.pipe(reload({stream:true}));
 });
@@ -76,7 +76,7 @@ gulp.task('build', ['css', 'scripts', 'templates']);
 gulp.task('watch', function() {
 	gulp.watch('src/stylesheets/**/*.styl', ['css']);
   gulp.watch('src/js/**/*.js', ['scripts']);
-  gulp.watch('./views/**/*.hbs', ['templates']);
+  gulp.watch('./views/**/*.html', ['templates']);
 });
 
 
