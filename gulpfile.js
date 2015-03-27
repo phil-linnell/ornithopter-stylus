@@ -44,7 +44,10 @@ gulp.task('scripts', function() {
     .pipe(reload({stream:true}));
 });
 
-
+gulp.task('vendor', function() {
+	return gulp.src('src/js/vendor/*.js')
+		.pipe(gulp.dest('build/js/vendor'));
+});
 
 
 // Templates
@@ -70,13 +73,13 @@ gulp.task('templates', function() {
 
 
 // Initial build
-gulp.task('build', ['css', 'scripts', 'templates']);
+gulp.task('build', ['css', 'scripts', 'vendor', 'templates']);
 
 // Watch
 gulp.task('watch', function() {
 	gulp.watch('src/stylesheets/**/*.styl', ['css']);
   gulp.watch('src/js/**/*.js', ['scripts']);
-  gulp.watch('./views/**/*.html', ['templates']);
+  gulp.watch('src/views/**/*.html', ['templates']);
 });
 
 
