@@ -13,13 +13,12 @@ var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
 
 
-
 gulp.task('browser-sync', function() {
   browserSync.init( {
 		server: {
 			baseDir: "./build"
 		},
-    port: "10191", // Hey that's the year Dune is set!
+    port: "3000",
     open: false
   });
 });
@@ -82,5 +81,5 @@ gulp.task('watch', function() {
   gulp.watch('src/views/**/*.html', ['templates']);
 });
 
-
+// Development
 gulp.task('default', ['build', 'browser-sync', 'watch']);
