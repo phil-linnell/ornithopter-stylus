@@ -1,20 +1,20 @@
-var gulp = require('gulp');
+const gulp = require('gulp');
 
-var stylus      = require('gulp-stylus');
-// var nib         = require('nib');
+const stylus      = require('gulp-stylus');
+// const nib         = require('nib');
 
-var concat      = require('gulp-concat');
-var uglify      = require('gulp-uglify');
-var rename      = require('gulp-rename');
+const concat      = require('gulp-concat');
+const uglify      = require('gulp-uglify');
+const rename      = require('gulp-rename');
 
-var handlebars 	= require('gulp-compile-handlebars');
+const handlebars 	= require('gulp-compile-handlebars');
 
-var browserSync = require('browser-sync');
-var reload      = browserSync.reload;
+const browserSync = require('browser-sync');
+const reload      = browserSync.reload;
 
-var postcss     = require('gulp-postcss');
-var quash       = require('postcss-quash');
-var autoprefixer = require('autoprefixer');
+const postcss     = require('gulp-postcss');
+const quash       = require('postcss-quash');
+const autoprefixer = require('autoprefixer');
 
 gulp.task('browser-sync', function() {
   browserSync.init( {
@@ -36,7 +36,7 @@ gulp.task('css', function() {
 });
 
 // gulp.task('postcss', function () {
-//   var processors = [
+//   const processors = [
 //     quash
 //   ];
 //   return gulp.src('./build/stylesheets/style.css')
@@ -64,10 +64,10 @@ gulp.task('vendor', function() {
 
 // Templates
 gulp.task('templates', function() {
-	var templateData = {
+	const templateData = {
 	  title: 'Fremen'
 	};
-	var options = {
+	const options = {
 	  ignorePartials: true,
 	  batch: ['./src/views'],
 	  helpers: {
