@@ -1,6 +1,6 @@
 {
-  "name": "fremen",
-  "version": "0.0.3",
+  "name": "Ornithopter - Stylus",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "start": "gulp build && node app.js"
