@@ -35,13 +35,14 @@ gulp.task('css', function() {
     .pipe(reload({stream: true}));
 });
 
+// PostCSS
 // gulp.task('postcss', function () {
 //   const processors = [
 //     quash
 //   ];
 //   return gulp.src('./build/stylesheets/style.css')
 //     .pipe(postcss(processors))
-//     .pipe(gulp.dest('./dest'));
+//     .pipe(gulp.dest('./test'));
 // });
 
 
